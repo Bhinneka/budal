@@ -1,24 +1,18 @@
 package com.bhinneka.budal;
 
-import com.sun.net.httpserver.HttpServer;
+import io.github.cdimascio.dotenv.Dotenv;
 import java.io.IOException;
-import java.net.InetSocketAddress;
 
 /**
  * Created by Wuriyanto 15 01 2019
  *
  */
 public class App {
-    public static void main( String[] args ) throws IOException {
-        int serverPort = 9000;
-        
-        HttpServer httpServer = HttpServer.create(new InetSocketAddress(serverPort), 0);
-        
-        httpServer.createContext("/", new IndexHandler());
-        
-        httpServer.setExecutor(null);
-        httpServer.start();
-        
 
+    public static void main(String[] args) throws IOException {
+        Dotenv dotenv = Dotenv.load();
+
+        Server server = new Server(Integer.parseInt(dotenv.get("PORT")));
+        server.start();
     }
 }
