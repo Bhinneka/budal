@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bhinneka.budal;
+package com.bhinneka.budal.utils;
 
 import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
