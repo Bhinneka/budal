@@ -14,15 +14,14 @@ import java.io.IOException;
  *
  * @author wurianto
  */
-public class IndexHandler implements HttpHandler {
+public class MeHandler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange e) throws IOException {
 
-        String responseText = "index";
+        String responseText = "me";
 
         Utils.writeResponse(200, e, responseText.getBytes());
-
     }
 
 }
