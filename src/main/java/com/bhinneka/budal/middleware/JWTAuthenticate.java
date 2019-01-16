@@ -6,17 +6,20 @@
 package com.bhinneka.budal.middleware;
 
 import com.sun.net.httpserver.Authenticator;
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 
 /**
  *
  * @author wurianto
  */
-public class JWTAuthenticate extends Authenticator{
+public class JWTAuthenticate extends Authenticator {
 
     @Override
-    public Result authenticate(HttpExchange he) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Result authenticate(HttpExchange e) {
+        Headers headers = e.getRequestHeaders();
+        System.out.println(headers.getFirst("Authorization"));
+        throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
 }

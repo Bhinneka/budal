@@ -20,7 +20,7 @@ import java.net.InetSocketAddress;
  */
 public class Server {
 
-    private HttpServer httpServer;
+    private final HttpServer httpServer;
 
     public Server(int port) throws IOException {
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
@@ -37,6 +37,7 @@ public class Server {
                 return username.equals("wury") && password.equals("12345");
             }
         };
+        
 
         meContext.setAuthenticator(authenticator);
 
